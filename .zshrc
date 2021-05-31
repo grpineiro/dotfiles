@@ -151,9 +151,3 @@ zle -N openNVIM
 
 bindkey ^v openNVIM
 
-export CLASSPATH=".:/home/gabriel/Antlr4/antlr-4.9.1-complete.jar:$CLASSPATH"
-alias antlr4='java -jar /home/gabriel/Antlr4/antlr-4.9.1-complete.jar'
-alias grun='java org.antlr.v4.gui.TestRig'
-
-(cat ~/.cache/wal/sequences &)
-source ~/.cache/wal/colors-tty.sh
