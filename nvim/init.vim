@@ -26,7 +26,7 @@ set shiftwidth=2
 set expandtab
 set autoread
 set encoding=UTF-8
-colorscheme wal
+
 syntax on
 
 let g:blamer_enabled = 1
@@ -34,6 +34,8 @@ let g:airline_powerline_fonts = 1
 
 let mapleader="\<space>"
 nnoremap <leader>; A;<esc>
+nnoremap <leader>ev :vsplit ~/.config/nvim/init.vim<cr>
+nnoremap <leader>sv :source ~/.config/nvim/init.vim<cr>
 
 au FocusGained * :checktime
 
