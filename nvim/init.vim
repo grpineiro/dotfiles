@@ -11,6 +11,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'OmniSharp/omnisharp-vim'
 Plug 'chriskempson/base16-vim'
 Plug 'dylanaraps/wal.vim'
+Plug 'tpope/vim-fugitive' 
 
 call plug#end()
 
@@ -28,14 +29,24 @@ set autoread
 set encoding=UTF-8
 
 syntax on
+colorscheme nord
 
 let g:blamer_enabled = 1
 let g:airline_powerline_fonts = 1
 
 let mapleader="\<space>"
+
 nnoremap <leader>; A;<esc>
+nnoremap <C-/> I//<esc>
 nnoremap <leader>ev :vsplit ~/.config/nvim/init.vim<cr>
 nnoremap <leader>sv :source ~/.config/nvim/init.vim<cr>
+nnoremap <leader>f2 :PlugInstall<cr>
+nnoremap <leader>f3 :PlugUpdate<cr>
+
+"VIM-fugitive config keys.
+nmap <leader>gh :diffget //3<CR>
+nmap <leader>gu :diffget //2<CR>
+nmap <leader>gs :G<CR>
 
 au FocusGained * :checktime
 
@@ -73,6 +84,7 @@ let g:coc_global_extensions = [
   \ 'coc-elixir',
   \ 'coc-emmet', 
   \ 'coc-solargraph',
+  \ 'coc-rust-analyzer'
   \ ]
 
 " Coc - Neovim Configuration
@@ -110,3 +122,4 @@ inoremap <silent><expr> <Tab>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
+
