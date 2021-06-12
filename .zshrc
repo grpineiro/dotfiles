@@ -151,3 +151,4 @@ zle -N openNVIM
 
 bindkey ^v openNVIM
 
+source /usr/share/fzf/shell/key-bindings.zsh
