@@ -143,12 +143,4 @@ zinit light zdharma/fast-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
 
-function openNVIM {
-  nvim
-}
-
-zle -N openNVIM
-
-bindkey ^v openNVIM
-
 source /usr/share/fzf/shell/key-bindings.zsh
