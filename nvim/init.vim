@@ -94,6 +94,9 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
+" provide custom statusline: lightline.vim, vim-airline.
+set statusline^=%{coc#status()}
+
 " Show Documentation
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
