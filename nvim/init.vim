@@ -61,7 +61,8 @@ let g:coc_global_extensions = [
   \ 'coc-elixir',
   \ 'coc-emmet', 
   \ 'coc-solargraph',
-  \ 'coc-rust-analyzer'
+  \ 'coc-rust-analyzer',
+  \ 'coc-lua'
   \ ]
 
 " provide custom statusline: lightline.vim, vim-airline.
