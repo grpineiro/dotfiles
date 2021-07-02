@@ -1,8 +1,8 @@
 call plug#begin()
+Plug 'neovim/nvim-lspconfig'
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'OmniSharp/omnisharp-vim'
 Plug 'tpope/vim-fugitive' 
 Plug 'arcticicestudio/nord-vim'
 
