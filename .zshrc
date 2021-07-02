@@ -68,7 +68,7 @@ ZSH_THEME="spaceship"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git asdf docker docker-compose yarn npm)
+plugins=(git asdf docker docker-compose yarn npm fzf)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -139,6 +139,7 @@ zinit light-mode for \
 
 ### End of Zinit's installer chunk
 
+zinit light Aloxaf/fzf-tab
 zinit light zdharma/fast-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
