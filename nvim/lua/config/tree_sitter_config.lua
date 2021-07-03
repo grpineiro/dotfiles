@@ -9,7 +9,8 @@ require'nvim-treesitter.configs'.setup {
   },
   ensure_installed = {
     "tsx",
-    "ts",
+    "typescript",
+    "javascript",
     "toml",
     "json",
     "yaml",
