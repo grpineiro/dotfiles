@@ -9,11 +9,13 @@ Plug 'tjdevries/colorbuddy.nvim'
 Plug 'maaslalani/nordbuddy'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-lua/completion-nvim'
+Plug 'hrsh7th/nvim-compe'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+Plug 'norcalli/snippets.nvim'
+Plug 'windwp/nvim-autopairs'
 
 call plug#end()
 
