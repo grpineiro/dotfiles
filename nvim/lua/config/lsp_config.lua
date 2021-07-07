@@ -17,9 +17,7 @@ require'lspinstall'.post_install_hook = function ()
 end
 
 local on_attach = function(client, bufnr)
-  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-
-  require'completion'.on_attach(client, bufnr)
+  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end 
 
   -- Mappings.
   local opts = { noremap=true, silent=true }
