@@ -24,19 +24,7 @@ set autoread
 set encoding=UTF-8
 
 syntax enable
-
-let g:nord_contrast = 1
-let g:nord_borders = 1
-let g:nord_disable_background = 1
 colorscheme nord
-
-let g:completion_enable_auto_popup = 1
-let g:completion_enable_auto_signature = 1
-let g:completion_enable_snippet = 'UltiSnips'
-let g:completion_confirm_key = ""
-imap <expr> <cr>  pumvisible() ? complete_info()["selected"] != "-1" ?
-                 \ "\<Plug>(completion_confirm_completion)"  : "\<c-e>\<CR>" :  "\<CR>"
-
 
 au FocusGained * :checktime
 
