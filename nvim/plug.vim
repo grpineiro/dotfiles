@@ -4,9 +4,7 @@ Plug 'kabouzeid/nvim-lspinstall'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'tpope/vim-fugitive' 
-Plug 'shaunsingh/nord.nvim'
 Plug 'tjdevries/colorbuddy.nvim'
-Plug 'maaslalani/nordbuddy'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'hrsh7th/nvim-compe'
@@ -16,6 +14,6 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'norcalli/snippets.nvim'
 Plug 'windwp/nvim-autopairs'
-
+Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
