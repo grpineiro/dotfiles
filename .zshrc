@@ -144,4 +144,4 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
 
 source /usr/share/fzf/shell/key-bindings.zsh
-alias dotconf='/usr/bin/git --git-dir=/home/gabriel/.dotfiles/ --work-tree=/home/gabriel'
+alias dotconf='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
