@@ -8,11 +8,6 @@ nnoremap <leader>sv :source ~/.config/nvim/init.vim<cr>
 nnoremap <leader>f2 :PlugInstall<cr>
 nnoremap <leader>f3 :PlugUpdate<cr>
 
-"VIM-fugitive config keys.
-nmap <leader>gh :diffget //3<CR>
-nmap <leader>gu :diffget //2<CR>
-nmap <leader>gs :G<CR>
-
 " -- LSP Saga keymaps
 "Hover doc
 nnoremap <silent>K :Lspsaga hover_doc<CR>
