@@ -17,7 +17,6 @@ Plug 'norcalli/snippets.nvim'
 Plug 'windwp/nvim-autopairs'
 Plug 'arcticicestudio/nord-vim'
 Plug 'ishan9299/nvim-solarized-lua'
-Plug 'codota/tabnine-vim'
 
 call plug#end()
 
