@@ -11,3 +11,10 @@
   unstage = reset HEAD --
   undo = checkout --
   rollback = reset --soft HEAD~1
+[user]
+	name = Gabriel Piñeiro
+	email = grpineiro@gmail.com
+[core]
+	editor = nvim
+[init]
+	defaultBranch = main
