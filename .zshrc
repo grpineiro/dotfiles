@@ -145,3 +145,4 @@ zinit light zsh-users/zsh-completions
 
 source /usr/share/fzf/shell/key-bindings.zsh
 alias dotconf='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
