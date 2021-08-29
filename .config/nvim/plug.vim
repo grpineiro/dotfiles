@@ -13,10 +13,12 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
-Plug 'norcalli/snippets.nvim'
 Plug 'windwp/nvim-autopairs'
 Plug 'arcticicestudio/nord-vim'
 Plug 'ishan9299/nvim-solarized-lua'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
+Plug 'onsails/lspkind-nvim'
 
 call plug#end()
 

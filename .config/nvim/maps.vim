@@ -8,6 +8,9 @@ nnoremap <leader>sv :source ~/.config/nvim/init.vim<cr>
 nnoremap <leader>f2 :PlugInstall<cr>
 nnoremap <leader>f3 :PlugUpdate<cr>
 
+"Neogit open
+nnoremap <leader>g :Neogit<cr>
+
 " -- LSP Saga keymaps
 "Hover doc
 nnoremap <silent>K :Lspsaga hover_doc<CR>
@@ -34,6 +37,7 @@ nnoremap <silent> ;f <cmd>Telescope find_files<cr>
 nnoremap <silent> ;r <cmd>Telescope live_grep<cr>
 nnoremap <silent> \\ <cmd>Telescope buffers<cr>
 nnoremap <silent> ;; <cmd>Telescope help_tags<cr>
+nnoremap <silent> ;b <cmd>Telescope file_browser<cr>
 
 " Autocomplete
 inoremap <silent><expr> <C-Space> compe#complete()
