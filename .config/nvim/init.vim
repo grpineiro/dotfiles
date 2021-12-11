@@ -22,9 +22,12 @@ set shiftwidth=2
 set expandtab
 set autoread
 set encoding=UTF-8
+set termguicolors
+
 
 syntax enable
-colorscheme nord
+colorscheme NeoSolarized
+set background=dark
 
 au FocusGained * :checktime
 
