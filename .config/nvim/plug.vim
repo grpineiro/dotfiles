@@ -1,4 +1,6 @@
 call plug#begin()
+
+" General
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'glepnir/lspsaga.nvim'
@@ -17,7 +19,10 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'ishan9299/nvim-solarized-lua'
 
 Plug 'onsails/lspkind-nvim'
+
+" Themes
 Plug 'overcache/NeoSolarized'
+Plug 'navarasu/onedark.nvim'
 
 " Nvim-cmp: Autocomplete
 Plug 'hrsh7th/cmp-nvim-lsp'
