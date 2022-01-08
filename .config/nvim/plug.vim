@@ -37,7 +37,7 @@ Plug 'hrsh7th/cmp-vsnip'
 
 " Telescope
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+Plug 'nvim-telescope/telescope-fzf-native.nvim', {'do': 'make'}
 Plug 'nvim-telescope/telescope-file-browser.nvim'
 
 call plug#end()

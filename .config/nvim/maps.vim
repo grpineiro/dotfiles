@@ -33,11 +33,15 @@ inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " -- Telescope
+
+" Basics
 nnoremap <silent> ;f <cmd>Telescope find_files<cr>
 nnoremap <silent> ;r <cmd>Telescope live_grep<cr>
 nnoremap <silent> \\ <cmd>Telescope buffers<cr>
 nnoremap <silent> ;; <cmd>Telescope help_tags<cr>
-nnoremap <silent> ;b <cmd>Telescope file_browser<cr>
+nnoremap <silent> ;b <cmd>lua require 'telescope'.extensions.file_browser.file_browser()<cr>
 
-" Autocomplete
+" Git
+nnoremap <silent> ;gc <cmd>Telescope git_commits<cr>
+nnoremap <silent> ;gb <cmd>Telescope git_branches<cr>
 

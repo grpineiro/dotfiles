@@ -1,5 +1,6 @@
 local nvim_lsp = require('lspconfig')
 local lsp_installer = require("nvim-lsp-installer")
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 lsp_installer.on_server_ready(function(server)
     local opts = {}
@@ -12,16 +13,27 @@ lsp_installer.on_server_ready(function(server)
     -- This setup() function is exactly the same as lspconfig's setup function.
     -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
     server:setup(opts)
+
 end)
 
+lsp_installer.settings({
+    ui = {
+        icons = {
+            server_installed = "✓",
+            server_pending = "➜",
+            server_uninstalled = "✗"
+        }
+    }
+})
+
 local on_attach = function(client, bufnr)
-  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end 
+  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
 
   -- Mappings.
   local opts = { noremap=true, silent=true }
   buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
   buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-  
+
   -- Format on save
   if client.resolved_capabilities.document_formatting then
     vim.api.nvim_command [[augroup Format]]
@@ -102,7 +114,26 @@ nvim_lsp.diagnosticls.setup {
   }
 }
 
--- TypeScript
-nvim_lsp.tsserver.setup {
-  on_attach = on_attach
+local servers = { "tsserver", "cssls", "html", "clangd" }
+for _, lsp in ipairs(servers) do
+  nvim_lsp[lsp]. setup {
+    capabilities = capabilities,
+    flags = {
+      debounce_text_changes = 150
+    }
+  }
+end
+
+nvim_lsp.sumneko_lua.setup {
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = {"vim"}
+      },
+      runtime = {
+        version = 'LuaJIT'
+      }
+    }
+  }
 }
+

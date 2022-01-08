@@ -7,3 +7,5 @@ saga.init_lsp_saga {
   infor_sign = '',
   border_style = "round",
 }
+
+require'lspsaga.codeaction'.code_action_prompt()
