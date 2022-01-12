@@ -1,0 +1,2 @@
+#!/bin/sh
+feh --no-fehbg --bg-scale '/home/gabriel/wallpapers/landscapes/daniel-leone.jpg' 
