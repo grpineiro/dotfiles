@@ -6,7 +6,6 @@ Plug 'williamboman/nvim-lsp-installer'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'TimUntersberger/neogit'
 Plug 'tjdevries/colorbuddy.nvim'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -22,6 +21,7 @@ Plug 'onsails/lspkind-nvim'
 " Themes
 Plug 'overcache/NeoSolarized'
 Plug 'navarasu/onedark.nvim'
+Plug 'shaunsingh/nord.nvim'
 
 " Nvim-cmp: Autocomplete
 Plug 'hrsh7th/cmp-nvim-lsp'
