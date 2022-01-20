@@ -3,7 +3,7 @@ call plug#begin()
 " General
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
-Plug 'glepnir/lspsaga.nvim'
+Plug 'tami5/lspsaga.nvim', { 'branch': 'nvim6.0' }
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'tjdevries/colorbuddy.nvim'
@@ -39,6 +39,10 @@ Plug 'hrsh7th/cmp-vsnip'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', {'do': 'make'}
 Plug 'nvim-telescope/telescope-file-browser.nvim'
+Plug 'nvim-telescope/telescope-github.nvim'
+
+" Git client
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
