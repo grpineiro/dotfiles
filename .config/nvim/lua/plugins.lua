@@ -1,7 +1,8 @@
 local fn = vim.fn
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+
 if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+  Packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
 end
 
 --vim.cmd [[packadd packer.nvim]]
@@ -29,7 +30,7 @@ return require('packer').startup(function(use)
   use { 'onsails/lspkind-nvim' }
   use { 'shaunsingh/nord.nvim' }
 
-  use { 
+  use {
         'hrsh7th/cmp-nvim-lsp',
         'hrsh7th/cmp-buffer',
         'hrsh7th/cmp-path',
@@ -48,7 +49,7 @@ return require('packer').startup(function(use)
         requires = { {'nvim-lua/plenary.nvim'} },
         'nvim-telescope/telescope-file-browser.nvim',
         'nvim-telescope/telescope-github.nvim',
-        {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+        { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   }
 
   use { 'tpope/vim-fugitive' }
@@ -56,7 +57,7 @@ return require('packer').startup(function(use)
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
-  if packer_bootstrap then
+  if Packer_bootstrap then
     require('packer').sync()
   end
 end)
