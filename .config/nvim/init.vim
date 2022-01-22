@@ -1,11 +1,8 @@
 runtime ./plug.vim
 runtime ./maps.vim
 
-if has("unix")
-  let s:uname = system("uname -s") 
-endif
-
 lua << EOF
+  require('plugins')
   require('config')
 
   local w = vim.loop.new_fs_poll()
@@ -42,8 +39,8 @@ set encoding=UTF-8
 syntax enable
 "colorscheme NeoSolarized
 "set background=dark
-let g:onedark_style = 'darker'
-colorscheme onedark
+"let g:onedark_style = 'darker'
+colorscheme nord
 "hi Normal guibg=NONE ctermbg=NONE
 
 au FocusGained * :checktime
