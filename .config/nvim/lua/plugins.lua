@@ -56,6 +56,8 @@ return require('packer').startup(function(use)
 
   use 'andweeb/presence.nvim'
 
+  use 'numToStr/Comment.nvim'
+
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

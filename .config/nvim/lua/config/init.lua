@@ -5,6 +5,7 @@ require('config/lualine_config')
 require('config/telescope_config')
 require('config/tree_sitter_config')
 require('config/compe_config')
+require('config/comment')
 
 -- Init Plugins
 require('nvim-autopairs').setup()
