@@ -68,7 +68,7 @@ ZSH_THEME="spaceship"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git asdf docker docker-compose yarn npm)
+plugins=(git asdf docker docker-compose yarn npm fzf)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -147,3 +147,6 @@ alias dotconf='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 
 alias luamake=/home/gabriel/Builds/lua-language-server/3rd/luamake/luamake
+
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
