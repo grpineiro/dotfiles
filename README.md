@@ -1,5 +1,7 @@
 # Dotfiles
 
+[![Watch the video](./dotfiles-video-thumb.png)](https://drive.google.com/file/d/1cfBTURKmD6UWphTQB7rVPh_A7FqVGhKa/view?usp=sharing)
+
 ## Installation
 
 ### Requirements:
