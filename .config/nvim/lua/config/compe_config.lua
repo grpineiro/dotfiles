@@ -8,10 +8,7 @@ vim.o.completeopt = "menu,menuone,noselect"
     snippet = {
       -- REQUIRED - you must specify a snippet engine
       expand = function(args)
-        vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-        -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-        -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
-        -- require'snippy'.expand_snippet(args.body) -- For `snippy` users.
+        require'luasnip'.lsp_expand(args.body)
       end,
     },
     formatting = {
@@ -44,7 +41,7 @@ vim.o.completeopt = "menu,menuone,noselect"
     },
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
-      { name = 'vsnip' }, -- For vsnip users.
+      { name = 'luasnip'}, -- For vsnip users.
       -- { name = 'luasnip' }, -- For luasnip users.
       -- { name = 'ultisnips' }, -- For ultisnips users.
       -- { name = 'snippy' }, -- For snippy users.
@@ -71,7 +68,7 @@ vim.o.completeopt = "menu,menuone,noselect"
 
 -- If you want insert `(` after select function or method item
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
-local cmp = require('cmp')
+cmp = require('cmp')
 cmp.event:on( 'confirm_done', cmp_autopairs.on_confirm_done({  map_char = { tex = '' } }))
 
 
@@ -82,7 +79,8 @@ require('lspkind').init({
     -- enables text annotations
     --
     -- default: true
-    with_text = true,
+    mode = "symbol_text",
+    --with_text = true,
 
     -- default symbol map
     -- can be either 'default' (requires nerd-fonts font) or
