@@ -9,6 +9,8 @@ end
 
 return require('packer').startup(function(use)
 
+  use 'wbthomason/packer.nvim'
+
   use {
         'neovim/nvim-lspconfig',
         'williamboman/nvim-lsp-installer'
@@ -39,9 +41,8 @@ return require('packer').startup(function(use)
   }
 
   use {
-        'hrsh7th/vim-vsnip',
-        'hrsh7th/vim-vsnip-integ',
-        'hrsh7th/cmp-vsnip'
+    'L3MON4D3/LuaSnip',
+    'saadparwaiz1/cmp_luasnip'
   }
 
   use {
