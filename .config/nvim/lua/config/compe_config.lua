@@ -121,3 +121,5 @@ require('lspkind').init({
     },
 })
 
+-- Snippets pre-config loads:
+require("luasnip.loaders.from_vscode").load()

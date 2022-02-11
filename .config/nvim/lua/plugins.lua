@@ -40,9 +40,11 @@ return require('packer').startup(function(use)
         'hrsh7th/nvim-cmp'
   }
 
+  -- Snippets
   use {
     'L3MON4D3/LuaSnip',
-    'saadparwaiz1/cmp_luasnip'
+    'saadparwaiz1/cmp_luasnip',
+    'rafamadriz/friendly-snippets'
   }
 
   use {
