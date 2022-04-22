@@ -1,4 +1,5 @@
 vim.o.completeopt = "menu,menuone,noselect"
+  local luasnip = require'luasnip'
 
 -- Setup nvim-cmp.
   local cmp = require'cmp'
@@ -41,7 +42,8 @@ vim.o.completeopt = "menu,menuone,noselect"
     },
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
-      { name = 'luasnip'}, -- For vsnip users.
+      { name = 'luasnip'},
+      { name = 'path' },
       -- { name = 'luasnip' }, -- For luasnip users.
       -- { name = 'ultisnips' }, -- For ultisnips users.
       -- { name = 'snippy' }, -- For snippy users.
@@ -122,4 +124,13 @@ require('lspkind').init({
 })
 
 -- Snippets pre-config loads:
-require("luasnip.loaders.from_vscode").load()
+luasnip.snippets = {
+  html = {}
+}
+
+luasnip.snippets.javascript = luasnip.snippets.html
+luasnip.snippets.javascriptreact = luasnip.snippets.html
+luasnip.snippets.typescriptreact = luasnip.snippets.html
+
+require("luasnip/loaders/from_vscode").load({include = {"html"}})
+require("luasnip/loaders/from_vscode").lazy_load()

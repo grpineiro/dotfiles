@@ -35,14 +35,17 @@ set autoread
 set encoding=UTF-8
 "set termguicolors
 
+highlight WinSeparator guibg=None
 
 syntax enable
 "colorscheme NeoSolarized
 "set background=dark
 "let g:onedark_style = 'darker'
 colorscheme nord
-"hi Normal guibg=NONE ctermbg=NONE
+hi Normal guibg=NONE ctermbg=NONE
 
 au FocusGained * :checktime
 
 "hi NonText guifg=250 guifg=none hi Normal guifg=252 guibg=none
+
+set laststatus=3

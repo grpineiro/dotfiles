@@ -47,6 +47,7 @@ return require('packer').startup(function(use)
     'rafamadriz/friendly-snippets'
   }
 
+  -- Telescope
   use {
         'nvim-telescope/telescope.nvim',
         requires = { {'nvim-lua/plenary.nvim'} },
@@ -56,6 +57,13 @@ return require('packer').startup(function(use)
   }
 
   use { 'tpope/vim-fugitive' }
+
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim'
+    },
+  }
 
   use 'andweeb/presence.nvim'
 

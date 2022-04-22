@@ -8,4 +8,4 @@ saga.init_lsp_saga {
   border_style = "round",
 }
 
-require'lspsaga.codeaction'.code_action_prompt()
+require'lspsaga.codeaction'

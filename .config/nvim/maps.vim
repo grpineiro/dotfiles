@@ -29,6 +29,11 @@ tnoremap <silent> <C-t> <C-\><C-n>:Lspsaga close_floaterm<CR>
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
+" Fugitive
+nnoremap <leader>gh :diffget //3<CR>
+nnoremap <leader>gu :diffget //2<CR>
+nnoremap <leader>gs :G<CR>
+
 " -- Telescope
 
 " Basics

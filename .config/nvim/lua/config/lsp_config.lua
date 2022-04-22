@@ -124,6 +124,27 @@ for _, lsp in ipairs(servers) do
   }
 end
 
+
+nvim_lsp.rust_analyzer.setup({
+    on_attach=on_attach,
+    settings = {
+        ["rust-analyzer"] = {
+            assist = {
+                importGranularity = "module",
+                importPrefix = "by_self",
+            },
+            cargo = {
+                loadOutDirsFromCheck = true
+            },
+            procMacro = {
+                enable = true
+            },
+        }
+    }
+})
+
+require'lspconfig'.solc.setup{}
+
 nvim_lsp.sumneko_lua.setup {
   settings = {
     Lua = {

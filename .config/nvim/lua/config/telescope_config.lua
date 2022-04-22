@@ -11,7 +11,8 @@ telescope.setup {
     file_ignore_patterns = {
       "node_modules",
       "_build",
-      "deps"
+      "deps",
+      ".git"
     },
   },
   extensions = {
@@ -22,7 +23,12 @@ telescope.setup {
       case_mode = "smart_case",
     },
     file_browser = {}
-  }
+  },
+  pickers = {
+    find_files = {
+      hidden = true,
+    },
+  },
 }
 
 telescope.load_extension "file_browser"
