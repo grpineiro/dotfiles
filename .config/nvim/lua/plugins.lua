@@ -9,14 +9,17 @@ end
 
 return require('packer').startup(function(use)
 
+  -- Development --
+  use '/home/gabriel/Learning/stackmap.nvim'
+  -- ----------- --
+
   use 'wbthomason/packer.nvim'
 
   use {
         'neovim/nvim-lspconfig',
-        'williamboman/nvim-lsp-installer'
   }
 
-  use { 'tami5/lspsaga.nvim', branch = 'nvim6.0' }
+  use { 'tami5/lspsaga.nvim' }
   use { 'kyazdani42/nvim-web-devicons' }
   use { 'nvim-lua/plenary.nvim' }
   use { 'tjdevries/colorbuddy.nvim' }
@@ -71,6 +74,9 @@ return require('packer').startup(function(use)
 
   -- Interactive Repl Over Neovim
   use 'hkupty/iron.nvim'
+
+  -- Color highlighter
+  use 'norcalli/nvim-colorizer.lua'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
