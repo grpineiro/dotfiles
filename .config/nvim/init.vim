@@ -1,4 +1,3 @@
-runtime ./plug.vim
 runtime ./maps.vim
 
 lua << EOF
@@ -20,10 +19,9 @@ lua << EOF
   )
 
 EOF
-
 set hidden
 set number
-set relativenumber
+"set relativenumber
 set mouse=a
 set inccommand=split
 set smarttab
