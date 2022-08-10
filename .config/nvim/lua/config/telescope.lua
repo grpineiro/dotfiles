@@ -22,11 +22,15 @@ telescope.setup {
       override_file_sorter = true,
       case_mode = "smart_case",
     },
-    file_browser = {}
+    file_browser = {
+      hidden = true,
+      previewer = false,
+    }
   },
   pickers = {
     find_files = {
       hidden = true,
+      previewer = false,
     },
   },
 }
