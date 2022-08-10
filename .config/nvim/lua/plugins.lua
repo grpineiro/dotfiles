@@ -5,9 +5,15 @@ if fn.empty(fn.glob(install_path)) > 0 then
   Packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
 end
 
+local status, packer = pcall(require, 'packer')
+if not status then
+  print("Packer is not installed.")
+  return
+end
+
 --vim.cmd [[packadd packer.nvim]]
 
-return require('packer').startup(function(use)
+return packer.startup(function(use)
 
   -- Development --
   use '/home/gabriel/Learning/stackmap.nvim'
