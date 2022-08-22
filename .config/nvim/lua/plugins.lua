@@ -78,9 +78,6 @@ return packer.startup(function(use)
 
   use 'numToStr/Comment.nvim'
 
-  -- Interactive Repl Over Neovim
-  use 'hkupty/iron.nvim'
-
   -- Color highlighter
   use 'norcalli/nvim-colorizer.lua'
 
