@@ -7,7 +7,6 @@ require('config/treesitter')
 require('config/compe')
 require('config/comment')
 require('config/gitsigns')
-require('config/repl')
 
 -- Init Plugins
 require('nvim-autopairs').setup()
