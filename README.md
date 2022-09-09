@@ -33,5 +33,5 @@ dotconf checkout
 4. Prevent untracked files from showing up on dotfiles status.
 
 ```shell
-dotconf config --local status.showUntrackedFiles no
+dtf config --local status.showUntrackedFiles no
 ```
