@@ -19,6 +19,7 @@ lua << EOF
   )
 
 EOF
+set guicursor+=a:blinkon1
 set hidden
 set number
 "set relativenumber
@@ -33,16 +34,20 @@ set autoread
 set encoding=UTF-8
 "set termguicolors
 
-highlight WinSeparator guibg=None
+"highlight WinSeparator guibg=None
 
-syntax enable
+let g:nord_italic = v:false
+let g:nord_disable_background = v:false
+let g:nord_borders = v:true
+let g:nord_contrast = v:true
+syntax on
 "colorscheme NeoSolarized
 "set background=dark
 "let g:onedark_style = 'darker'
 colorscheme nord
-hi Normal guibg=NONE ctermbg=NONE
+"hi Normal guibg=NONE ctermbg=NONE
 
-au FocusGained * :checktime
+"au FocusGained * :checktime
 
 "hi NonText guifg=250 guifg=none hi Normal guifg=252 guibg=none
 
