@@ -13,7 +13,17 @@ vim.o.completeopt = "menu,menuone,noselect"
       end,
     },
     formatting = {
-      format = lspkind.cmp_format(),
+     format = lspkind.cmp_format({
+      mode = "symbol_text",
+      menu = ({
+        buffer = "[Buffer]",
+        nvim_lsp = "[LSP]",
+        luasnip = "[LuaSnip]",
+        nvim_lua = "[Lua]",
+        latex_symbols = "[Latex]",
+        conjure = "[Conjure]"
+      })
+  }),
     },
     mapping = {
       ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
@@ -43,10 +53,12 @@ vim.o.completeopt = "menu,menuone,noselect"
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
       { name = 'luasnip'},
+      { name = 'nvim_lua'},
       { name = 'path' },
       -- { name = 'luasnip' }, -- For luasnip users.
       -- { name = 'ultisnips' }, -- For ultisnips users.
       -- { name = 'snippy' }, -- For snippy users.
+      { name = 'conjure'},
     }, {
       { name = 'buffer' },
     })

@@ -1,23 +1,25 @@
 local status, nvim_lsp = pcall(require, 'lspconfig')
 if not status then return end
 
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
-local on_attach = function(client, bufnr)
+local on_attach = function(_, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
 
   -- Mappings.
   local opts = { noremap=true, silent=true }
   buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
   buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  buf_set_keymap('n', 'gt', '<Cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
 
   -- Format on save
-  if client.resolved_capabilities.document_formatting then
-    vim.api.nvim_command [[augroup Format]]
-    vim.api.nvim_command [[autocmd! * <buffer>]]
-    vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
-    vim.api.nvim_command [[augroup END]]
-  end
+  -- if client.resolved_capabilities.document_formatting then
+  --   vim.api.nvim_command [[augroup Format]]
+  --   vim.api.nvim_command [[autocmd! * <buffer>]]
+  --   vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
+  --   vim.api.nvim_command [[augroup END]]
+  -- end
 
 end
 
@@ -33,9 +35,10 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   }
 )
 
-local servers = { "tsserver", "cssls", "html" }
+local servers = { "tsserver", "cssls", "html", "clangd" }
 for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp]. setup {
+  nvim_lsp[lsp].setup {
+    on_attach = on_attach,
     capabilities = capabilities,
     flags = {
       debounce_text_changes = 150
@@ -46,6 +49,7 @@ end
 
 nvim_lsp.rust_analyzer.setup({
     on_attach=on_attach,
+    capabilities=capabilities,
     settings = {
         ["rust-analyzer"] = {
             assist = {
@@ -63,6 +67,7 @@ nvim_lsp.rust_analyzer.setup({
 })
 
 nvim_lsp.sumneko_lua.setup {
+  capabilities=capabilities,
   settings = {
     Lua = {
       diagnostics = {

@@ -1,10 +1,14 @@
-require('lualine').setup {
+local status, lualine = pcall(require, 'lualine')
+if not status then return end
+
+lualine.setup {
   options = {
     icons_enabled = true,
     theme = 'nord',
     section_separators = { left = '', right = ''},
     component_separators = '|',
-    disabled_filetypes = {}
+    disabled_filetypes = {},
+    globalstatus = true,
   },
   sections = {
     lualine_a = {{ 'mode', separator = { left = '' }, right_padding = 2 }},

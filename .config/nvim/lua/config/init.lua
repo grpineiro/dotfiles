@@ -7,9 +7,16 @@ require('config/treesitter')
 require('config/compe')
 require('config/comment')
 require('config/gitsigns')
+require('config/null')
+require('config/conjure')
+require('config/mason')
 
 -- Init Plugins
-require('nvim-autopairs').setup()
+require('nvim-autopairs').setup({
+  disable_filetype = {
+    "lisp",
+  }
+})
 
 vim.opt.termguicolors = true
 
