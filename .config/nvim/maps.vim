@@ -1,5 +1,6 @@
 
 let mapleader="\<space>"
+let maplocalleader="\\"
 
 nnoremap <leader>; A;<esc>
 nnoremap <C-/> I//<esc>
@@ -7,6 +8,7 @@ nnoremap <leader>ev :vsplit ~/.config/nvim/init.vim<cr>
 nnoremap <leader>sv :source %<cr>
 nnoremap <leader>1 :vsplit ~/.config/nvim/lua/plugins.lua<cr>
 nnoremap <leader>2 :PackerSync<cr>
+nnoremap <leader>tj :belowright split<bar>term<cr>
 
 " -- LSP Saga keymaps
 "Hover doc
@@ -21,7 +23,7 @@ nnoremap <silent> gh <Cmd>Lspsaga lsp_finder<CR>
 "Rename
 nnoremap <silent>gr :Lspsaga rename<CR>
 
-"Open/Close Terminal
+"Open/Close Float Terminal
 nnoremap <silent> <C-t> :Lspsaga open_floaterm<CR>
 tnoremap <silent> <C-t> <C-\><C-n>:Lspsaga close_floaterm<CR>
 
@@ -34,12 +36,16 @@ nnoremap <leader>gh :diffget //3<CR>
 nnoremap <leader>gu :diffget //2<CR>
 nnoremap <leader>gs :G<CR>
 
+" -- LuaSnip
+inoremap <silent> <M-k> <cmd>lua require('luasnip').jump(1)<CR>
+inoremap <silent> <M-j> <cmd>lua require('luasnip').jump(-1)<CR>
+
 " -- Telescope
 
 " Basics
 nnoremap <silent> ;f <cmd>Telescope find_files<cr>
 nnoremap <silent> ;r <cmd>Telescope live_grep<cr>
-nnoremap <silent> \\ <cmd>Telescope buffers<cr>
+nnoremap <silent> ;l <cmd>Telescope buffers<cr>
 nnoremap <silent> ;; <cmd>Telescope help_tags<cr>
 nnoremap <silent> ;b <cmd>lua require 'telescope'.extensions.file_browser.file_browser()<cr>
 
@@ -47,12 +53,3 @@ nnoremap <silent> ;b <cmd>lua require 'telescope'.extensions.file_browser.file_b
 nnoremap <silent> ;gc <cmd>Telescope git_commits<cr>
 nnoremap <silent> ;gb <cmd>Telescope git_branches<cr>
 
-" -- Conjure LISP Enviroment
-lua << EOF
-  local conjure_group = vim.api.nvim_create_augroup("ConjureCommands", { clear = true })
-
-  vim.api.nvim_create_autocmd("FileType", { pattern = "lisp", callback = function ()
-    vim.keymap.set('n', '<F2>', '<Cmd>ConjureEvalBuf<CR>', { desc = "Send Buf to EVAL." })
-    vim.keymap.set('n', '<F3>', '<Cmd>ConjureEvalFile<CR>', { desc = "Send FIle to EVAL." })
-  end, group = conjure_group, once = true })  
-EOF
