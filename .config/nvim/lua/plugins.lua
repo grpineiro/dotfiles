@@ -35,7 +35,10 @@ return packer.startup(function(use)
   use { 'nvim-lua/popup.nvim' }
   use { 'windwp/nvim-autopairs' }
   use { 'onsails/lspkind-nvim' }
+
+  -- Themes
   use { 'shaunsingh/nord.nvim' }
+  use { 'EdenEast/nightfox.nvim' }
 
   use {
         'hrsh7th/cmp-nvim-lsp',
