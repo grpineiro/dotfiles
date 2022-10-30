@@ -17,11 +17,13 @@ return packer.startup(function(use)
 
   use 'wbthomason/packer.nvim'
 
+  use { "williamboman/mason.nvim" }
+
   use {
-        'neovim/nvim-lspconfig',
+        'neovim/nvim-lspconfig'
   }
 
-  use { 'tami5/lspsaga.nvim' }
+  use { "glepnir/lspsaga.nvim" }
   use { 'kyazdani42/nvim-web-devicons' }
   use { 'nvim-lua/plenary.nvim' }
   use { 'tjdevries/colorbuddy.nvim' }
@@ -89,7 +91,6 @@ return packer.startup(function(use)
   -- Null-ls - Diagnostics
   use 'jose-elias-alvarez/null-ls.nvim'
 
-  use 'williamboman/mason.nvim'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
