@@ -1,4 +1,4 @@
-require('config/compe')
+require('config/cmp')
 require('config/mason')
 require('config/lualine')
 require('config/lsp')
