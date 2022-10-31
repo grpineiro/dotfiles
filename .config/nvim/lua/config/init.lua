@@ -1,15 +1,15 @@
+require('config/compe')
+require('config/mason')
 require('config/lualine')
 require('config/lsp')
 require('config/lspsaga')
 require('config/lualine')
 require('config/telescope')
 require('config/treesitter')
-require('config/compe')
 require('config/comment')
 require('config/gitsigns')
 require('config/null')
 require('config/conjure')
-require('config/mason')
 
 -- Init Plugins
 require('nvim-autopairs').setup({
