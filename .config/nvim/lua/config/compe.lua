@@ -1,3 +1,6 @@
+local status, keys = pcall(require,"keys")
+if not status then return end
+
 vim.o.completeopt = "menu,menuone,noselect"
   local luasnip = require'luasnip'
 
@@ -58,7 +61,7 @@ vim.o.completeopt = "menu,menuone,noselect"
       -- { name = 'luasnip' }, -- For luasnip users.
       -- { name = 'ultisnips' }, -- For ultisnips users.
       -- { name = 'snippy' }, -- For snippy users.
-      { name = 'conjure'},
+      { name = 'conjure'}
     }, {
       { name = 'buffer' },
     })
