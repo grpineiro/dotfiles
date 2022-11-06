@@ -46,6 +46,6 @@ map("n", ";b", ":Telescope file_browser<CR>")
 
 -- Git
 map("n", ";gc", ":Telescope git_commits<CR>")
-map("n", ";gb", ":Telescope git_branchs<CR>")
+map("n", ";gb", ":Telescope git_branches<CR>")
 
 return map
