@@ -1,2 +1,3 @@
 require("core/opts")
-require("core/background")
+require("core/theme")
+require("core/maps")
