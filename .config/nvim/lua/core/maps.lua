@@ -39,7 +39,7 @@ map("i", "<M-j>", "<cmd>lua require('luasnip').jump(-1)<CR>")
 -- Telescope --
 -- Basics
 map("n", ";f", ":Telescope find_files<CR>")
-map("n", "<;r", ":Telescope live_grep<CR>")
+map("n", ";r", ":Telescope live_grep<CR>")
 map("n", ";l", ":Telescope buffers<CR>")
 map("n", ";;", ":Telescope help_tags<CR>")
 map("n", ";b", ":Telescope file_browser<CR>")
