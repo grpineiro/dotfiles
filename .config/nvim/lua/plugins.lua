@@ -84,9 +84,6 @@ return packer.startup(function(use)
 
   use 'numToStr/Comment.nvim'
 
-  -- Color highlighter
-  use 'norcalli/nvim-colorizer.lua'
-
   -- Lisp enviroment
   use 'Olical/conjure'
   use 'gpanders/nvim-parinfer' -- Specific autopairs for Lisp.
