@@ -43,14 +43,17 @@ return packer.startup(function(use)
   use { 'EdenEast/nightfox.nvim' }
 
   use {
+        'hrsh7th/cmp-nvim-lua',
         'hrsh7th/cmp-nvim-lsp',
         'hrsh7th/cmp-buffer',
         'hrsh7th/cmp-path',
         'hrsh7th/cmp-cmdline',
         'hrsh7th/nvim-cmp',
         -- Lisp Conjure support.
-        'PaterJason/cmp-conjure'
+        'PaterJason/cmp-conjure',
   }
+
+  use { 'vappolinario/cmp-clippy' }
 
   -- Snippets
   use {
@@ -90,7 +93,6 @@ return packer.startup(function(use)
 
   -- Null-ls - Diagnostics
   use 'jose-elias-alvarez/null-ls.nvim'
-
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
