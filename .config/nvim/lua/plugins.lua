@@ -41,6 +41,7 @@ return packer.startup(function(use)
   -- Themes
   use { 'shaunsingh/nord.nvim' }
   use { 'EdenEast/nightfox.nvim' }
+  use 'navarasu/onedark.nvim'
 
   use {
         'hrsh7th/cmp-nvim-lua',
