@@ -15,6 +15,9 @@ end
 
 return packer.startup(function(use)
 
+  -- Fennel support.
+  use 'rktjmp/hotpot.nvim'
+
   use 'wbthomason/packer.nvim'
 
   use { "williamboman/mason.nvim" }
@@ -54,8 +57,6 @@ return packer.startup(function(use)
         'PaterJason/cmp-conjure',
   }
 
-  use { 'vappolinario/cmp-clippy' }
-
   -- Snippets
   use {
     'L3MON4D3/LuaSnip',
@@ -81,12 +82,9 @@ return packer.startup(function(use)
     },
   }
 
-  use 'andweeb/presence.nvim'
-
   use 'numToStr/Comment.nvim'
 
   -- Lisp enviroment
-  use 'Olical/conjure'
   use 'gpanders/nvim-parinfer' -- Specific autopairs for Lisp.
 
   -- Null-ls - Diagnostics
