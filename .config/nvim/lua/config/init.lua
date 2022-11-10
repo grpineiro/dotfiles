@@ -9,7 +9,6 @@ require('config/treesitter')
 require('config/comment')
 require('config/gitsigns')
 require('config/null')
-require('config/conjure')
 
 -- Init Plugins
 require('nvim-autopairs').setup({
