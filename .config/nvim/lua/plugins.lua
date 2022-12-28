@@ -10,7 +10,6 @@ if not status then
   print("Packer is not installed.")
   return
 end
-
 --vim.cmd [[packadd packer.nvim]]
 
 return packer.startup(function(use)
@@ -45,6 +44,7 @@ return packer.startup(function(use)
   use { 'shaunsingh/nord.nvim' }
   use { 'EdenEast/nightfox.nvim' }
   use 'navarasu/onedark.nvim'
+  use 'B4mbus/oxocarbon-lua.nvim'
 
   use {
         'hrsh7th/cmp-nvim-lua',
@@ -83,6 +83,10 @@ return packer.startup(function(use)
   use 'numToStr/Comment.nvim'
 
   -- Lisp enviroment
+  use 'monkoose/parsley'
+  use {
+    'monkoose/nvlime',
+  }
   use 'gpanders/nvim-parinfer' -- Specific autopairs for Lisp.
 
   -- Null-ls - Diagnostics

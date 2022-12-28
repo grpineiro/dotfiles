@@ -35,7 +35,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   }
 )
 
-local servers = { "tsserver", "cssls", "html", "clangd" }
+local servers = { "tsserver", "cssls", "html", "clangd", "jsonls" }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
