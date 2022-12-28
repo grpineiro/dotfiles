@@ -19,10 +19,10 @@ return packer.startup(function(use)
 
   use 'wbthomason/packer.nvim'
 
-  use { "williamboman/mason.nvim" }
-
-  use {
-        'neovim/nvim-lspconfig'
+  -- LSP
+  use { "williamboman/mason.nvim",
+        "neovim/nvim-lspconfig",
+        "williamboman/mason-lspconfig.nvim",
   }
 
   use { "glepnir/lspsaga.nvim" }
