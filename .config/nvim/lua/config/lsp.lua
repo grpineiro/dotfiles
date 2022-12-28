@@ -1,5 +1,8 @@
-local status, nvim_lsp = pcall(require, 'lspconfig')
-if not status then return end
+local status_mason_lspconfig, mason_lspconfig = pcall(require, 'mason-lspconfig')
+local status_lspconfig, nvim_lsp = pcall(require, 'lspconfig')
+if not status_mason_lspconfig and status_lspconfig then return end
+
+mason_lspconfig.setup()
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
@@ -35,53 +38,66 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   }
 )
 
-local servers = { "tsserver", "cssls", "html", "clangd", "jsonls" }
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
-    flags = {
-      debounce_text_changes = 150
+mason_lspconfig.setup_handlers {
+  function (server_name)
+    nvim_lsp[server_name].setup {
+      capabilities = capabilities,
+      on_attach = on_attach
     }
-  }
-end
+  end,
 
-
-nvim_lsp.rust_analyzer.setup({
-    on_attach=on_attach,
-    capabilities=capabilities,
-    settings = {
+  ["rust_analyzer"] = function()
+    nvim_lsp.rust_analyzer.setup({
+      on_attach = on_attach,
+      capabilities = capabilities,
+      settings = {
         ["rust-analyzer"] = {
-            assist = {
-                importGranularity = "module",
-                importPrefix = "by_self",
-            },
-            cargo = {
-                loadOutDirsFromCheck = true
-            },
-            procMacro = {
-                enable = true
-            },
+          assist = {
+            importGranularity = "module",
+              importPrefix = "by_self",
+          },
+          cargo = {
+            loadOutDirsFromCheck = true
+          },
+          procMacro = {
+            enable = true
+          },
         }
-    }
-})
+      }
+    })
+  end,
 
-nvim_lsp.sumneko_lua.setup {
-  capabilities=capabilities,
-  settings = {
-    Lua = {
-      diagnostics = {
-        globals = {"vim"}
-      },
-      runtime = {
-        version = 'LuaJIT',
-      },
-      workspace = {
-        -- Make the server aware of Neovim runtime files
-        library = vim.api.nvim_get_runtime_file("", true),
-        checkThirdParty = false
-      },
+  ["sumneko_lua"] = function()
+    nvim_lsp.sumneko_lua.setup {
+      capabilities = capabilities,
+      on_attach = on_attach,
+      settings = {
+        Lua = {
+          diagnostics = {
+            globals = {"vim"}
+          },
+          runtime = {
+            version = 'LuaJIT',
+          },
+          workspace = {
+            -- Make the server aware of Neovim runtime files
+            library = vim.api.nvim_get_runtime_file("", true),
+            checkThirdParty = false
+          },
+        }
+      }
     }
-  }
+  end
 }
+
+-- local servers = { "tsserver", "cssls", "html", "clangd", "jsonls" }
+-- for _, lsp in ipairs(servers) do
+--   nvim_lsp[lsp].setup {
+--     on_attach = on_attach,
+--     capabilities = capabilities,
+--     flags = {
+--       debounce_text_changes = 150
+--     }
+--   }
+-- end
 
