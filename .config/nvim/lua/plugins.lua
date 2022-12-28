@@ -14,9 +14,6 @@ end
 
 return packer.startup(function(use)
 
-  -- Fennel support.
-  use 'rktjmp/hotpot.nvim'
-
   use 'wbthomason/packer.nvim'
 
   -- LSP
