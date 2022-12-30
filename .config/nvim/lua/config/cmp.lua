@@ -1,5 +1,5 @@
-local status, keys = pcall(require,"keys")
-if not status then return end
+-- local status, keys = pcall(require,"keys")
+-- if not status then return end
 
 vim.o.completeopt = "menu,menuone,noselect"
   local luasnip = require'luasnip'
@@ -8,6 +8,7 @@ vim.o.completeopt = "menu,menuone,noselect"
   local cmp = require'cmp'
   local lspkind = require'lspkind'
   --local luasnip = require'luasnip'
+
   cmp.setup({
     snippet = {
       -- REQUIRED - you must specify a snippet engine
@@ -15,19 +16,44 @@ vim.o.completeopt = "menu,menuone,noselect"
         require'luasnip'.lsp_expand(args.body)
       end,
     },
+
     formatting = {
-     format = lspkind.cmp_format({
-      mode = "symbol_text",
-      menu = ({
-        buffer = "[Buffer]",
-        nvim_lsp = "[LSP]",
-        luasnip = "[LuaSnip]",
-        nvim_lua = "[Lua]",
-        latex_symbols = "[Latex]",
-        conjure = "[Conjure]"
-      })
-  }),
+      format = lspkind.cmp_format({
+        mode = "symbol_text",
+        menu = ({
+          buffer = "[Buffer]",
+          nvim_lsp = "[LSP]",
+          luasnip = "[LuaSnip]",
+          nvim_lua = "[Lua]",
+          latex_symbols = "[Latex]",
+          conjure = "[Conjure]",
+          nvlime = "[SLIME]"
+        })
+      }),
     },
+
+    style = {
+      winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
+    },
+
+    window = {
+      completion = {
+        border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+        scrollbar = "║",
+        winhighlight = 'Normal:CmpMenu,FloatBorder:CmpMenuBorder,CursorLine:CmpSelection,Search:None',
+        autocomplete = {
+          cmp.TriggerEvent.InsertEnter,
+          cmp.TriggerEvent.TextChanged,
+        }
+      },
+
+      documentation = {
+        border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+        scrollbar = "║",
+        winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
+      }
+    },
+
     mapping = {
       ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
       ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
@@ -53,6 +79,7 @@ vim.o.completeopt = "menu,menuone,noselect"
       end
     end,
     },
+
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
       { name = 'luasnip'},
@@ -61,10 +88,16 @@ vim.o.completeopt = "menu,menuone,noselect"
       -- { name = 'luasnip' }, -- For luasnip users.
       -- { name = 'ultisnips' }, -- For ultisnips users.
       -- { name = 'snippy' }, -- For snippy users.
-      { name = 'conjure'}
+      { name = 'conjure'},
     }, {
       { name = 'buffer' },
     })
+  })
+
+  require('cmp').setup.filetype({'lisp'}, {
+    sources = {
+        { name = 'nvlime' }
+    }
   })
 
   -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
@@ -91,6 +124,15 @@ cmp.event:on( 'confirm_done', cmp_autopairs.on_confirm_done({  map_char = { tex 
 
 -- add a lisp filetype (wrap my-function), FYI: Hardcoded = { "clojure", "clojurescript", "fennel", "janet" }
 --cmp_autopairs.lisp[#cmp_autopairs.lisp+1] = "racket"
+
+local highlights = {
+  CmpMenu = { bg="#161616" },
+  CmpSelection = { bg="#353535" },
+}
+
+for group, hl in pairs(highlights) do
+  vim.api.nvim_set_hl(0, group, hl)
+end
 
 require('lspkind').init({
     -- enables text annotations
