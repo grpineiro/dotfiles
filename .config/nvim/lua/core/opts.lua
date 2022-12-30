@@ -15,3 +15,4 @@ opt.autoread = true
 opt.encoding = "UTF-8"
 opt.laststatus = 3
 vim.g.syntax_on = true
+cmd([[ g:nvlime_config.cmp.enabled = true ]])
