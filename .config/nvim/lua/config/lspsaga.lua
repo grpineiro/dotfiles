@@ -1,11 +1,6 @@
-local saga = require('lspsaga')
+local status, saga = pcall(require, 'lspsaga')
+if (not status) then return end
 
-saga.init_lsp_saga {
-  error_sign = '',
-  warn_sign = '',
-  hint_sign = '',
-  infor_sign = '',
-  border_style = "round",
-}
+saga.init_lsp_saga()
 
 require'lspsaga.codeaction'
