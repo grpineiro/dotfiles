@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
+vim.g.maplocalleader = ","
 
 local map = vim.keymap.set
 
@@ -8,19 +8,19 @@ map("n", "<leader>tj", ":belowright split<bar>term<CR>")
 
 -- LSP Saga --
 -- Hover doc
-map("n", "K", ":Lspsaga hover_doc<CR>")
+map("n", "K", ":Lspsaga hover_doc<CR>", { silent = true })
 
 -- Signature help
-map("i", "<C-k>", ":Lspsaga signature_help<CR>")
+map("i", "<C-k>", ":Lspsaga signature_help<CR>", { silent = true })
 
 -- Async LSP finder
-map("n", "gh", "<cmd>Lspsaga lsp_finder<CR>")
+map("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", { silent = true })
 
 --Code actions
-map("n", "ga", "<Cmd>Lspsaga code_action<CR>")
+map("n", "ga", "<Cmd>Lspsaga code_action<CR>", { silent = true })
 
 -- Rename
-map("n", "gr", ":Lspsaga rename<CR>")
+map("n", "gr", ":Lspsaga rename<CR>", { silent = true })
 
 -- CMP --
 -- Navigate through popup menu
@@ -38,14 +38,14 @@ map("i", "<M-j>", "<cmd>lua require('luasnip').jump(-1)<CR>")
 
 -- Telescope --
 -- Basics
-map("n", ";f", ":Telescope find_files<CR>")
-map("n", ";r", ":Telescope live_grep<CR>")
-map("n", ";l", ":Telescope buffers<CR>")
-map("n", ";;", ":Telescope help_tags<CR>")
-map("n", ";b", ":Telescope file_browser<CR>")
+map("n", ";f", ":Telescope find_files<CR>", { silent = true })
+map("n", ";r", ":Telescope live_grep<CR>", { silent = true })
+map("n", ";l", ":Telescope buffers<CR>", { silent = true })
+map("n", ";;", ":Telescope help_tags<CR>", { silent = true })
+map("n", ";b", ":Telescope file_browser<CR>", { silent = true })
 
 -- Git
-map("n", ";gc", ":Telescope git_commits<CR>")
-map("n", ";gb", ":Telescope git_branches<CR>")
+map("n", ";gc", ":Telescope git_commits<CR>", { silent = true })
+map("n", ";gb", ":Telescope git_branches<CR>", { silent = true })
 
 return map
