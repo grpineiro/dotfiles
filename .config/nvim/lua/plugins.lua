@@ -42,6 +42,7 @@ return packer.startup(function(use)
   use { 'EdenEast/nightfox.nvim' }
   use 'navarasu/onedark.nvim'
   use 'B4mbus/oxocarbon-lua.nvim'
+  use 'olivercederborg/poimandres.nvim'
 
   use {
         'hrsh7th/cmp-nvim-lua',
@@ -80,9 +81,9 @@ return packer.startup(function(use)
   use 'numToStr/Comment.nvim'
 
   -- Lisp enviroment
-  use 'monkoose/parsley'
   use {
     'monkoose/nvlime',
+    requires = {'monkoose/parsley'},
   }
   use 'gpanders/nvim-parinfer' -- Specific autopairs for Lisp.
 
