@@ -27,6 +27,7 @@ null_ls.setup {
         }) == 0
       end
     }),
+    null_ls.builtins.formatting.rustfmt,
   },
   on_attach = function(client)
     if client.server_capabilities.documentFormattingProvider then
