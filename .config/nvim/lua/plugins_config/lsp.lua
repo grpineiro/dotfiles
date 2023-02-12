@@ -67,8 +67,8 @@ mason_lspconfig.setup_handlers {
     })
   end,
 
-  ["sumneko_lua"] = function()
-    nvim_lsp.sumneko_lua.setup {
+  ["lua_ls"] = function()
+    nvim_lsp.lua_ls.setup {
       capabilities = capabilities,
       on_attach = on_attach,
       settings = {
