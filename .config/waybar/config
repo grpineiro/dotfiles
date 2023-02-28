@@ -22,7 +22,6 @@
         "backlight",
         "pulseaudio",
         "pulseaudio#microphone",
-        "shutdowm"
     ],
 
     "hyprland/window": {
