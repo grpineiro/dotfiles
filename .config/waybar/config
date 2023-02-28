@@ -21,7 +21,8 @@
         "bluetooth",
         "backlight",
         "pulseaudio",
-        "pulseaudio#microphone"
+        "pulseaudio#microphone",
+        "shutdowm"
     ],
 
     "hyprland/window": {
@@ -125,10 +126,10 @@
 
     "backlight": {
       "device": "intel_backlight",
-      "format": "{percent}% {icon}",
+      "format": "{icon} {percent}%",
       "format-icons": ["", ""],
       "on-scroll-up": "light -A 5",
       "on-scroll-down": "light -U 5",
       "on-click": "light -O & light -I"
-  }
+    },
 }
