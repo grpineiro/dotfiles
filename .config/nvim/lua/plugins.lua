@@ -20,6 +20,7 @@ return packer.startup(function(use)
   use { "williamboman/mason.nvim",
         "neovim/nvim-lspconfig",
         "williamboman/mason-lspconfig.nvim",
+        "nvim-lua/lsp-status.nvim",
   }
 
   use { "glepnir/lspsaga.nvim" }
@@ -38,11 +39,8 @@ return packer.startup(function(use)
   use { 'onsails/lspkind-nvim' }
 
   -- Themes
-  use { 'shaunsingh/nord.nvim' }
-  use { 'EdenEast/nightfox.nvim' }
   use 'navarasu/onedark.nvim'
-  use 'B4mbus/oxocarbon-lua.nvim'
-  use 'olivercederborg/poimandres.nvim'
+  use { "catppuccin/nvim", as = "catppuccin" }
 
   use {
         'hrsh7th/cmp-nvim-lua',
@@ -89,6 +87,9 @@ return packer.startup(function(use)
 
   -- Null-ls - Diagnostics
   use 'jose-elias-alvarez/null-ls.nvim'
+
+  -- Codium
+  use 'Exafunction/codeium.vim'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
