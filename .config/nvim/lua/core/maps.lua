@@ -43,6 +43,7 @@ map("n", ";r", ":Telescope live_grep<CR>", { silent = true })
 map("n", ";l", ":Telescope buffers<CR>", { silent = true })
 map("n", ";;", ":Telescope help_tags<CR>", { silent = true })
 map("n", ";b", ":Telescope file_browser<CR>", { silent = true })
+map("n", ";dd", ":Telescope diagnostics<CR>", { silent = true })
 
 -- Git
 map("n", ";gc", ":Telescope git_commits<CR>", { silent = true })
