@@ -17,7 +17,9 @@ return packer.startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- LSP
-  use { "williamboman/mason.nvim",
+  use {
+        "folke/neodev.nvim",
+        "williamboman/mason.nvim",
         "neovim/nvim-lspconfig",
         "williamboman/mason-lspconfig.nvim",
         "nvim-lua/lsp-status.nvim",
@@ -81,8 +83,7 @@ return packer.startup(function(use)
   -- Null-ls - Diagnostics
   use 'jose-elias-alvarez/null-ls.nvim'
 
-  -- Codium
-  use 'Exafunction/codeium.vim'
+  use '$HOME/Projects/nvim-plugins/aldehyde.nvim'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
