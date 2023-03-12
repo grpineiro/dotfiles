@@ -27,12 +27,16 @@ telescope.setup {
     file_browser = {
       hidden = true,
       previewer = false,
-    }
+    },
   },
   pickers = {
     find_files = {
       hidden = true,
       previewer = false,
+    },
+    diagnostics = {
+      previewer = false,
+      wrap_results = true,
     },
   },
 }
