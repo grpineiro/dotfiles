@@ -1,14 +1,12 @@
-# Dotfiles
+# Dotfiles [WIP]
 
-[![Watch the video](./dotfiles-video-thumb.png)](https://drive.google.com/file/d/1cfBTURKmD6UWphTQB7rVPh_A7FqVGhKa/view?usp=sharing)
+## Setup
+
+- Theme: Catppuccin
+- Wayland Compositor: Hyprland
+- Topbar: Waybar
 
 ## Installation
-
-### Requirements:
-
-- NodeJS
-- ZSH
-- Oh-My-Zsh
 
 ### Step by step:
 
