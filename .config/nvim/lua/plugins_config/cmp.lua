@@ -94,12 +94,6 @@ vim.o.completeopt = "menu,menuone,noselect"
     })
   })
 
-  require('cmp').setup.filetype({'lisp'}, {
-    sources = {
-        { name = 'nvlime' }
-    }
-  })
-
   -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
   cmp.setup.cmdline('/', {
     sources = {
