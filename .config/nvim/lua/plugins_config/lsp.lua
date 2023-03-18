@@ -1,8 +1,17 @@
 local status_mason_lspconfig, mason_lspconfig = pcall(require, 'mason-lspconfig')
 local status_lspconfig, nvim_lsp = pcall(require, 'lspconfig')
-if not status_mason_lspconfig and status_lspconfig then return end
+local status_lsp_status, lsp_status = pcall(require, 'lsp-status')
+local status_neodev, neodev = pcall(require, 'neodev')
+if not status_mason_lspconfig and status_lspconfig and status_lsp_status and status_neodev then return end
 
 mason_lspconfig.setup()
+
+lsp_status.config {
+  diagnostics = false,
+  status_symbol = "[LSP]"
+}
+lsp_status.register_progress()
+lsp_status.messages()
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
@@ -38,11 +47,34 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   }
 )
 
+neodev.setup {
+  library = {
+    enabled = true, -- when not enabled, neodev will not change any settings to the LSP server
+    -- these settings will be used for your Neovim config directory
+    runtime = true, -- runtime path
+    types = true, -- full signature, docs and completion of vim.api, vim.treesitter, vim.lsp and others
+    plugins = true, -- installed opt or start plugins in packpath
+    -- you can also specify the list of plugins to make available as a workspace library
+    -- plugins = { "nvim-treesitter", "plenary.nvim", "telescope.nvim" },
+  },
+  setup_jsonls = true, -- configures jsonls to provide completion for project specific .luarc.json files
+  -- for your Neovim config directory, the config.library settings will be used as is
+  -- for plugin directories (root_dirs having a /lua directory), config.library.plugins will be disabled
+  -- for any other directory, config.library.enabled will be set to false
+  -- With lspconfig, Neodev will automatically setup your lua-language-server
+  -- If you disable this, then you have to set {before_init=require("neodev.lsp").before_init}
+  -- in your lsp start options
+  lspconfig = false,
+  -- much faster, but needs a recent built of lua-language-server
+  -- needs lua-language-server >= 3.6.0
+  pathStrict = true,
+}
+
 mason_lspconfig.setup_handlers {
   function (server_name)
     nvim_lsp[server_name].setup {
       capabilities = capabilities,
-      on_attach = on_attach
+      on_attach = on_attach,
     }
   end,
 
@@ -69,6 +101,7 @@ mason_lspconfig.setup_handlers {
 
   ["lua_ls"] = function()
     nvim_lsp.lua_ls.setup {
+      before_init = require("neodev.lsp").before_init,
       capabilities = capabilities,
       on_attach = on_attach,
       settings = {
@@ -82,6 +115,10 @@ mason_lspconfig.setup_handlers {
           workspace = {
             -- Make the server aware of Neovim runtime files
             library = vim.api.nvim_get_runtime_file("", true),
+            -- library = {
+            --   [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+            --   [vim.fn.stdpath("config") .. "/lua"] = true,
+            -- },
             checkThirdParty = false
           },
         }
