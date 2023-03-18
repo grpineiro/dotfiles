@@ -3,6 +3,7 @@ if not status then return end
 
 lualine.setup {
   options = {
+    -- theme = 'onedark',
     icons_enabled = true,
     section_separators = { left = '', right = ''},
     component_separators = '|',
@@ -12,7 +13,7 @@ lualine.setup {
   sections = {
     lualine_a = {{ 'mode', separator = { left = '' }, right_padding = 2 }},
     lualine_b = { 'filename', { 'branch', icons_enabled = true, icon = "" } },
-    lualine_c = {'fileformat'},
+    lualine_c = { '%=', "require'lsp-status'.status()", '=%'},
     lualine_x = {
       { 'diagnostics', sources = {"nvim_diagnostic"}, symbols = {error = ' ', warn = ' ', info = ' ', hint = ' '} },
       'encoding',
