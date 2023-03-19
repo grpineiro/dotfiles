@@ -25,6 +25,13 @@ return packer.startup(function(use)
         "nvim-lua/lsp-status.nvim",
   }
 
+  -- DAP
+  use {
+        'mfussenegger/nvim-dap',
+        { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } },
+        { "jay-babu/mason-nvim-dap.nvim", requires = { "williamboman/mason.nvim", "mfussenegger/nvim-dap" } }
+  }
+
   use { "glepnir/lspsaga.nvim" }
   use { 'kyazdani42/nvim-web-devicons' }
   use { 'nvim-lua/plenary.nvim' }

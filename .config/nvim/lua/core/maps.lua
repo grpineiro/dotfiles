@@ -36,6 +36,9 @@ map("n", "<leader>gs", ":G<CR>")
 map("i", "<M-k>", "<cmd>lua require('luasnip').jump(1)<CR>")
 map("i", "<M-j>", "<cmd>lua require('luasnip').jump(-1)<CR>")
 
+-- DAP --
+map("n", "<leader>d", "<cmd>lua require('dapui').toggle()<CR>", { silent = true })
+
 -- Telescope --
 -- Basics
 map("n", ";f", ":Telescope find_files<CR>", { silent = true })
