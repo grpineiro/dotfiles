@@ -90,7 +90,10 @@ return packer.startup(function(use)
   -- Null-ls - Diagnostics
   use 'jose-elias-alvarez/null-ls.nvim'
 
-  use '$HOME/Projects/nvim-plugins/aldehyde.nvim'
+  -- Install local plugins --
+  if vim.fn.isdirectory(os.getenv("HOME") .. "/Projects/nvim-plugins") ~= 0 then
+    use '$HOME/Projects/nvim-plugins/aldehyde.nvim'
+  end
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
