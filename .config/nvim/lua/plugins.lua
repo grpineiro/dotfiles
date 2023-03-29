@@ -32,7 +32,6 @@ return packer.startup(function(use)
         { "jay-babu/mason-nvim-dap.nvim", requires = { "williamboman/mason.nvim", "mfussenegger/nvim-dap" } }
   }
 
-  use { "glepnir/lspsaga.nvim" }
   use { 'kyazdani42/nvim-web-devicons' }
   use { 'nvim-lua/plenary.nvim' }
   use { 'tjdevries/colorbuddy.nvim' }
