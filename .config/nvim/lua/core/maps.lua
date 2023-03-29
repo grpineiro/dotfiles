@@ -6,22 +6,6 @@ local map = vim.keymap.set
 -- Open Terminal in split bottom
 map("n", "<leader>tj", ":belowright split<bar>term<CR>")
 
--- LSP Saga --
--- Hover doc
-map("n", "K", ":Lspsaga hover_doc<CR>", { silent = true })
-
--- Signature help
-map("i", "<C-k>", ":Lspsaga signature_help<CR>", { silent = true })
-
--- Async LSP finder
-map("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", { silent = true })
-
---Code actions
-map("n", "ga", "<Cmd>Lspsaga code_action<CR>", { silent = true })
-
--- Rename
-map("n", "gr", ":Lspsaga rename<CR>", { silent = true })
-
 -- CMP --
 -- Navigate through popup menu
 map("i", "<expr><Tab>", 'pumvisible() ? "<C-n>" : "<Tab>')
