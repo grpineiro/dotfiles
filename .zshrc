@@ -144,4 +144,4 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
 
-alias dtf='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dtf='$(which git) --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
