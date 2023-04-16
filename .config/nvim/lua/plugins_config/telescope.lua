@@ -28,6 +28,13 @@ telescope.setup {
       hidden = true,
       previewer = false,
     },
+    ["ui-select"] = {
+      require("telescope.themes").get_cursor {
+        specific_opts = {
+          codeactions = true,
+        },
+      },
+    },
   },
   pickers = {
     find_files = {
@@ -43,6 +50,7 @@ telescope.setup {
 
 telescope.load_extension "file_browser"
 telescope.load_extension "fzf"
+telescope.load_extension "ui-select"
 
 --local function fugitave_integration()
 --  local builtin = require('telescope.builtin')
