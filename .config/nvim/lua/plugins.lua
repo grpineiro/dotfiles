@@ -92,8 +92,26 @@ return packer.startup(function(use)
 
   -- Install local plugins --
   if vim.fn.isdirectory(os.getenv("HOME") .. "/Projects/nvim-plugins") ~= 0 then
-    use '$HOME/Projects/nvim-plugins/aldehyde.nvim'
+    -- use '$HOME/Projects/nvim-plugins/aldehyde.nvim'
+    use {
+      '$HOME/Projects/nvim-plugins/buildandrun.nvim',
+      branch = "dev"
+    }
   end
+
+  -- Compiler infra
+  use {
+    "zeioth/compiler.nvim",
+    requires = {
+      "stevearc/overseer.nvim",
+      config = function(_, opts) require("overseer").setup(opts) end,
+    },
+    cmd = {"CompilerOpen", "CompilerToggleResults"},
+    config = function(_, opts) require("compiler").setup(opts) end,
+  }
+
+  -- Install nvim parinfer for lisp langs.
+  use 'gpanders/nvim-parinfer'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
