@@ -36,4 +36,11 @@ map("n", ";dd", ":Telescope diagnostics<CR>", { silent = true })
 map("n", ";gc", ":Telescope git_commits<CR>", { silent = true })
 map("n", ";gb", ":Telescope git_branches<CR>", { silent = true })
 
+-- Compiler Infra --
+-- Open compiler
+map('n', '<F6>', "<cmd>CompilerOpen<cr>", { noremap = true, silent = true })
+
+-- Toggle output resume
+map('n', '<S-F6>', "<cmd>CompilerToggleResults<cr>", { noremap = true, silent = true })
+
 return map

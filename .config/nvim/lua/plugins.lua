@@ -49,6 +49,7 @@ return packer.startup(function(use)
   -- Themes
   use 'navarasu/onedark.nvim'
   use { "catppuccin/nvim", as = "catppuccin" }
+  use { 'projekt0n/github-nvim-theme' }
 
   use {
         'hrsh7th/cmp-nvim-lua',

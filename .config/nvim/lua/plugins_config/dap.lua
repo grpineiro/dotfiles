@@ -6,11 +6,9 @@ if not status_dap and status_dapui and status_mason_dap then return end
 dapui.setup()
 
 mason_dap.setup({
-  automatic_setup = true,
+  handlers = {
+    function(source_name)
+      require("mason-nvim-dap").default_setup(source_name)
+    end
+  }
 })
-
-mason_dap.setup_handlers {
-  function(source_name)
-    require("mason-nvim-dap.automatic_setup")(source_name)
-  end
-}

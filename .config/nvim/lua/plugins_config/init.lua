@@ -9,6 +9,7 @@ require('plugins_config/treesitter')
 require('plugins_config/comment')
 require('plugins_config/gitsigns')
 require('plugins_config/null')
+require('plugins_config/devicons')
 
 -- Init Plugins
 require('nvim-autopairs').setup({
