@@ -5,9 +5,9 @@ return {
   initial_rows=42,
   -- You can specify some parameters to influence the font selection;
   -- for example, this selects a Bold, Italic font variant.
-  font = wezterm.font("JetBrains Mono", {weight="Regular", italic=false}),
+  font = wezterm.font("JetBrainsMono Nerd Font", {weight="Regular", italic=false}),
   font_size=13.0,
-  color_scheme = "carbonfox",
+  color_scheme = "Catppuccin Mocha",
   hide_tab_bar_if_only_one_tab = true,
 --  window_background_opacity = 0.6,
   keys = {
@@ -21,7 +21,7 @@ return {
     bottom = 0,
   },
 
-  enable_scroll_bar = true,
+  enable_scroll_bar = false,
 
   default_cursor_style = "BlinkingBlock",
   cursor_blink_rate = 800,
