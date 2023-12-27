@@ -43,4 +43,6 @@ map('n', '<F6>', "<cmd>CompilerOpen<cr>", { noremap = true, silent = true })
 -- Toggle output resume
 map('n', '<S-F6>', "<cmd>CompilerToggleResults<cr>", { noremap = true, silent = true })
 
+map("n", "<leader>]", ":Gen<CR>")
+
 return map

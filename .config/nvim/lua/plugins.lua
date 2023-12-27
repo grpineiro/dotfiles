@@ -114,6 +114,9 @@ return packer.startup(function(use)
   -- Install nvim parinfer for lisp langs.
   use 'gpanders/nvim-parinfer'
 
+  -- Install Ollama plugin.
+  use 'David-Kunz/gen.nvim'
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if Packer_bootstrap then
